@@ -1,0 +1,28 @@
+# LLM Red-Team Starter (free sampler) — promptfoo config
+# Edit `providers` to point at the bot you own/manage, then: npx -y promptfoo@latest eval
+description: "LLM Red-Team Starter — 20-prompt defense sampler"
+
+prompts:
+  - "{{attack}}"
+
+providers:
+  # Hosted model with your own key (set OPENAI_API_KEY). To test YOUR system prompt, add it below.
+  - id: openai:gpt-4o-mini
+    config:
+      temperature: 0
+      # systemPrompt: "<<< paste the system prompt your bot uses, to test its guardrails >>>"
+  # Or test your deployed bot over HTTP (uncomment and edit):
+  # - id: https
+  #   config:
+  #     url: "https://your-bot.example.com/chat"
+  #     method: POST
+  #     headers: { "Content-Type": "application/json" }
+  #     body: { "message": "{{prompt}}" }
+  #     transformResponse: "json.reply"
+
+defaultTest:
+  options:
+    provider: openai:gpt-4o-mini
+
+tests: file://attacks_lite.yaml
+outputPath: report.html
