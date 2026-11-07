@@ -37,12 +37,12 @@ This is the free 20-prompt teaser. The full **Chatbot Defense Test Pack** has 56
 categories, a plain-English fix guide for every category, and a fresh batch of new prompts each month
 as attacker patterns change.
 
-- **Full pack & fix guide:** https://ai-safety-desk.vercel.app/
-- **Free 10-minute AI tools checklist (non-technical):** https://ai-safety-desk.vercel.app/checklist.html
+- **Full pack & fix guide:** https://ai-safety-desk.vercel.app/?utm_source=github
+- **Free 10-minute AI tools checklist (non-technical):** https://ai-safety-desk.vercel.app/checklist.html?utm_source=github
 - **Guides:**
-  [Is ChatGPT safe for my business?](https://ai-safety-desk.vercel.app/guides/is-chatgpt-safe-for-business.html) ·
-  [Test your chatbot for prompt injection](https://ai-safety-desk.vercel.app/guides/test-chatbot-prompt-injection.html) ·
-  [OWASP LLM Top 10 checklist](https://ai-safety-desk.vercel.app/guides/owasp-llm-top-10-checklist.html)
+  [Is ChatGPT safe for my business?](https://ai-safety-desk.vercel.app/guides/is-chatgpt-safe-for-business.html?utm_source=github) ·
+  [Test your chatbot for prompt injection](https://ai-safety-desk.vercel.app/guides/test-chatbot-prompt-injection.html?utm_source=github) ·
+  [OWASP LLM Top 10 checklist](https://ai-safety-desk.vercel.app/guides/owasp-llm-top-10-checklist.html?utm_source=github)
 
 ## License
 MIT for the tooling. The prompts are provided for authorized, defensive testing of systems you own or
