@@ -1,0 +1,37 @@
+name: canaryprobe
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  selftest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 canaryprobe.py --selftest
+
+  # Copy this job into your own repo to test your bot's prompt on every PR.
+  # It needs an OPENAI_API_KEY secret and a prompt file such as prompts/system.txt.
+  probe:
+    if: ${{ vars.CANARYPROBE_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          python3 canaryprobe.py --openai-base https://api.openai.com/v1 --model gpt-4o-mini \
+            --system-prompt-file prompts/system.txt --repeat 2 --sarif results.sarif --md report.md
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: results.sarif

@@ -1,6 +1,6 @@
-# LLM Red-Team Starter (free sampler) — promptfoo config
+# canaryprobe probes — promptfoo config (LLM-rubric grading)
 # Edit `providers` to point at the bot you own/manage, then: npx -y promptfoo@latest eval
-description: "LLM Red-Team Starter — 20-prompt defense sampler"
+description: "canaryprobe probes (promptfoo, LLM-rubric grading)"
 
 prompts:
   - "{{attack}}"

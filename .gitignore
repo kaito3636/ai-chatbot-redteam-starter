@@ -1,0 +1,4 @@
+__pycache__/
+*.sarif
+report.md
+results.json
